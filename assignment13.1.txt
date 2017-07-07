@@ -1,0 +1,22 @@
+Q1. What is RDD?
+Ans:Resilient Distributed Datasets (RDD) is a fundamental data structure of Spark. It is an immutable distributed 
+    collection of objects.Each dataset in RDD is divided into logical partitions, which may be computed on different 
+    nodes of the cluster.
+
+Q2. Define Partitions.
+Ans:Resilient Distributed Datasets are collection of various data items that are so huge in size, that they cannot 
+    fit into a single node and have to be partitioned across various nodes.  A partition in spark is an atomic chunk of 
+    data (logical division of data) stored on a node in the cluster. Partitions are basic units of parallelism in Apache Spark.
+
+Q3. What operations does RDD support?
+Ans:RDDs perform two types of operations: Transformations which creates a new dataset from the previous RDD and actions 
+    which return a value to the driver program after performing the computation on the dataset.
+
+Q4. What do you understand by Transformations in Spark?
+Ans:Transformations create new RDD from existing RDD like map, reduceByKey and filter we just saw. Transformations are executed 
+    on demand. That means they are computed lazily. We will see lazy evaluations more in details in next part.
+
+Q5. Define actions.
+Ans:Actions return final results of RDD computations. Actions triggers execution using lineage graph to load the data into
+    original RDD, carry out all intermediate transformations and return final results to Driver program or write it out 
+    to file system.
